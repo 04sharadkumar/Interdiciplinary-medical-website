@@ -13,6 +13,7 @@ import {
   Settings,
   Bell
 } from 'lucide-react';
+import { FaHandHoldingMedical } from "react-icons/fa";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -41,7 +42,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       {/* Sidebar */}
       <div className={`fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 lg:translate-x-0`}>
         <div className="flex items-center justify-center h-16 bg-blue-600">
-          <Heart className="w-8 h-8 text-white mr-2" />
+          <FaHandHoldingMedical className="w-8 h-8 text-white mr-2" />
           <span className="text-xl font-bold text-white">MedInventory</span>
         </div>
         
