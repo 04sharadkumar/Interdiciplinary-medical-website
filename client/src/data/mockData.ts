@@ -90,6 +90,66 @@ export const mockInventoryItems: InventoryItem[] = [
     price: 120.00,
     lastUpdated: '2024-01-15',
     status: 'available'
+  },
+  {
+    id: '7',
+    name: 'Ibuprofen 200mg',
+    category: 'medicine',
+    currentStock: 200,
+    minStock: 50,
+    maxStock: 600,
+    unit: 'tablets',
+    expiryDate: '2025-01-10',
+    supplier: 'MedPharm Inc.',
+    batchNumber: 'IB2024002',
+    location: 'Pharmacy-A1',
+    price: 0.30,
+    lastUpdated: '2024-01-18',
+    status: 'available'
+  },
+  {
+    id: '8',
+    name: 'Face Masks',
+    category: 'supplies',
+    currentStock: 1000,
+    minStock: 200,
+    maxStock: 5000,
+    unit: 'pieces',
+    supplier: 'MedSupply Co.',
+    location: 'Storage-D2',
+    price: 0.10,
+    lastUpdated: '2024-01-16',
+    status: 'available'
+  },
+  {
+    id: '9',
+    name: 'Stethoscope',
+    category: 'equipment',
+    currentStock: 12,
+    minStock: 5,
+    maxStock: 50,
+    unit: 'units',
+    supplier: 'HealthTech Inc.',
+    location: 'Equipment-B3',
+    price: 45.00,
+    lastUpdated: '2024-01-12',
+    status: 'available'
+  },
+  {
+    id: '10',
+    name: 'Vitamin C 500mg',
+    category: 'medicine',
+    currentStock: 300,
+    minStock: 50,
+    maxStock: 1000,
+    unit: 'tablets',
+    expiryDate: '2025-05-20',
+    supplier: 'BioPharma Ltd.',
+    batchNumber: 'VC2024007',
+    location: 'Pharmacy-A3',
+    price: 0.20,
+    lastUpdated: '2024-01-17',
+    status: 'available'
   }
 ];
 
@@ -153,9 +213,34 @@ export const mockSuppliers: Supplier[] = [
     totalOrders: 67,
     lastOrderDate: '2024-01-11',
     status: 'active'
+  },
+  {
+    id: '6',
+    name: 'Wellness Pharma',
+    contact: '+1-555-0678',
+    email: 'contact@wellnesspharma.com',
+    address: '987 Wellness Road, Health District, HD 11223',
+    category: 'Pharmaceuticals',
+    rating: 4.5,
+    totalOrders: 120,
+    lastOrderDate: '2024-01-18',
+    status: 'active'
+  },
+  {
+    id: '7',
+    name: 'MediEquip Co.',
+    contact: '+1-555-0789',
+    email: 'sales@mediequip.com',
+    address: '654 Equipment Lane, Tech City, TC 33445',
+    category: 'Medical Equipment',
+    rating: 4.3,
+    totalOrders: 90,
+    lastOrderDate: '2024-01-15',
+    status: 'active'
   }
 ];
 
+// Dashboard stats
 export const mockDashboardStats: DashboardStats = {
   totalItems: mockInventoryItems.length,
   lowStockItems: mockInventoryItems.filter(item => item.status === 'low' || item.status === 'out-of-stock').length,
@@ -165,6 +250,7 @@ export const mockDashboardStats: DashboardStats = {
   monthlyConsumption: 15420.50
 };
 
+// Usage data
 export const mockUsageData: UsageRecord[] = [
   { date: '2024-01-01', consumed: 120, restocked: 200, expired: 5 },
   { date: '2024-01-02', consumed: 95, restocked: 150, expired: 3 },

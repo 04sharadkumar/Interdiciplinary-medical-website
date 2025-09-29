@@ -1,10 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { mockUsageData, mockInventoryItems, mockSuppliers } from '../data/mockData';
 import { useAuth } from '../context/AuthContext';
-import { 
-  BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
-  PieChart, Pie, Cell 
-} from 'recharts';
+import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,PieChart, Pie, Cell } from 'recharts';
 import { 
   TrendingUp, Package, AlertTriangle, DollarSign, Calendar, Download, Filter, Star
 } from 'lucide-react';

@@ -1,7 +1,6 @@
 import React from "react";
 import { useAuth } from "../context/AuthContext";
 
-// अलग-अलग dashboards import करो
 import AdminDashboard from "./Admin/AdminDashboard";
 import StaffDashboard from "./Admin/StaffDashboard";
 import PharmacistDashboard from "./Admin/PharmacistDashboard";
