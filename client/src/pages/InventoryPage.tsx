@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { mockInventoryItems } from '../data/mockData';
 import { useAuth } from '../context/AuthContext';
 import { 
@@ -7,6 +8,7 @@ import {
 } from 'lucide-react';
 
 const InventoryPage: React.FC = () => {
+  const navigate = useNavigate();
   const { user } = useAuth();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -73,11 +75,14 @@ const InventoryPage: React.FC = () => {
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <h1 className="text-2xl font-bold text-gray-900">Inventory Management</h1>
         <div className="flex flex-wrap gap-4 items-center">
-          {canAdd && (
-            <button className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-              <Plus className="w-5 h-5 mr-2"/> Add Item
-            </button>
-          )}
+         {canAdd && (
+  <button
+    onClick={() => navigate("/inventory/add")}
+    className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+  >
+    <Plus className="w-5 h-5 mr-2"/> Add Item
+  </button>
+)}
           {canExport && selectedItems.length > 0 && (
             <button className="flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
               <Download className="w-5 h-5 mr-2"/> Export Selected
@@ -209,22 +214,26 @@ const InventoryPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Role-based Actions */}
-            {(canEdit || canDelete) && (
-              <div className="flex space-x-2 mt-4 pt-4 border-t border-gray-200">
-                {canEdit && (
-                  <button className="flex-1 flex items-center justify-center px-3 py-2 text-sm text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50">
-                    <Edit className="w-4 h-4 mr-2"/>
-                    {user?.role === 'pharmacist' ? 'Update Stock' : 'Edit'}
-                  </button>
-                )}
-                {canDelete && (
-                  <button className="flex items-center justify-center px-3 py-2 text-sm text-red-600 border border-red-200 rounded-lg hover:bg-red-50">
-                    <Trash2 className="w-4 h-4"/>
-                  </button>
-                )}
-              </div>
-            )}
+           {/* Role-based Actions */}
+{(canEdit || canDelete) && (
+  <div className="flex space-x-2 mt-4 pt-4 border-t border-gray-200">
+    {canEdit && (
+      <button
+        onClick={() => navigate("/inventory/add", { state: { item } })}
+        className="flex-1 flex items-center justify-center px-3 py-2 text-sm text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50"
+      >
+        <Edit className="w-4 h-4 mr-2"/>
+        {user?.role === 'pharmacist' ? 'Update Stock' : 'Edit'}
+      </button>
+    )}
+    {canDelete && (
+      <button className="flex items-center justify-center px-3 py-2 text-sm text-red-600 border border-red-200 rounded-lg hover:bg-red-50">
+        <Trash2 className="w-4 h-4"/>
+      </button>
+    )}
+  </div>
+)}
+
           </div>
         ))}
       </div>

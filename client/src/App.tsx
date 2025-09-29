@@ -11,6 +11,7 @@ import SuppliersPage from './pages/SuppliersPage';
 import ReportsPage from './pages/ReportsPage';
 import StockRequestsPage from './pages/StockRequestPages';
 import ExpiryTrackerPage from './pages/ExpiryTrackerPage';
+import AddInventoryPage from './pages/Inventory/AddInventoryPage';
 
 // Protected Route Component
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -133,6 +134,16 @@ function App() {
                 </ProtectedRoute>
               } 
             />
+
+             <Route 
+              path="/inventory/add" 
+              element={
+                <ProtectedRoute>
+                   <AddInventoryPage />
+                </ProtectedRoute>
+              } 
+            />
+           
             
 
             {/* Catch all route */}
