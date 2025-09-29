@@ -43,7 +43,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       { path: '/expiry-tracker', icon: AlertTriangle, label: 'Expiry Tracker' },
       { path: '/reports', icon: BarChart3, label: 'Reports' },
       // { path: '/users', icon: UserCog, label: 'User Management' },
-      { path: '/branches', icon: Building2, label: 'Hospital Branches' },
+      // { path: '/branches', icon: Building2, label: 'Hospital Branches' },
     ],
     staff: [
       { path: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
