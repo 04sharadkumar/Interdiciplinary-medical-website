@@ -9,6 +9,8 @@ import DashboardPage from './pages/DashboardPage';
 import InventoryPage from './pages/InventoryPage';
 import SuppliersPage from './pages/SuppliersPage';
 import ReportsPage from './pages/ReportsPage';
+import StockRequestsPage from './pages/StockRequestPages';
+import ExpiryTrackerPage from './pages/ExpiryTrackerPage';
 
 // Protected Route Component
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -113,6 +115,25 @@ function App() {
                 </ProtectedRoute>
               } 
             />
+
+            <Route 
+              path="/expiry-tracker" 
+              element={
+                <ProtectedRoute>
+                  <ExpiryTrackerPage />
+                </ProtectedRoute>
+              } 
+            />
+
+            <Route 
+              path="/requests" 
+              element={
+                <ProtectedRoute>
+                  <StockRequestsPage />
+                </ProtectedRoute>
+              } 
+            />
+            
 
             {/* Catch all route */}
             <Route path="*" element={<Navigate to="/" replace />} />
