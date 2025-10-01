@@ -56,7 +56,7 @@ const HomePage: React.FC = () => {
               <FaHandHoldingMedical className="w-8 h-8 text-red-600 mr-3" /> 
               <span className="text-2xl font-bold text-blue-800">MedInventory</span>
             </div>
-            <div className="flex space-x-4">
+            <div className="flex space-x-2 ">
               <Link 
                 to="/login" 
                 className="text-gray-600 hover:text-blue-600 px-4 py-2 rounded-lg transition-colors"
@@ -65,7 +65,7 @@ const HomePage: React.FC = () => {
               </Link>
               <Link 
                 to="/signup" 
-                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                className="bg-blue-600 text-white px-4 py-2  rounded-lg hover:bg-blue-700 transition-colors"
               >
                 Get Started
               </Link>
